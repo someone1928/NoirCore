@@ -36,3 +36,28 @@ NoirCore/
 ├── LICENSE               # GPL-3.0 License
 └── README.md             # This file
 ```
+
+🚀 Getting Started
+Prerequisites
+Python 3.8+
+
+Git
+
+(Optional) Virtual Environment Tool (venv, virtualenv)
+
+Installation
+```bash
+Edit
+# Clone the repository
+git clone https://github.com/someone1928/NoirCore.git
+cd NoirCore
+```
+# Set up a virtual environment
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+# Install dependencies
+```bash
+pip install -r requirements.txt
+```
