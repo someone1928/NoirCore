@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Login | NoirCore{% endblock %}
+{% block content %}
+<div class="glass-card max-w-md mx-auto mt-20" data-aos="zoom-in">
+  <h2 class="text-2xl text-purple-300 mb-4">Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="mt-4 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700">Login</button>
+  </form>
+</div>
+{% endblock %}

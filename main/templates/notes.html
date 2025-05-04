@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Notes | NoirCore{% endblock %}
+
+{% block content %}
+<div class="text-center py-20">
+    <h1 class="text-4xl text-purple-300 font-bold">📝 My Notes</h1>
+    <p class="mt-4 text-gray-400">Keep track of your research and ideas in this section.</p>
+
+    <div class="mt-10">
+        {% if notes %}
+            <ul class="space-y-6">
+                {% for note in notes %}
+                    <li class="bg-black bg-opacity-30 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl text-purple-200">{{ note.title }}</h3>
+                        <p class="text-gray-400">{{ note.content|truncatewords:20 }}</p>
+                        <a href="{% url 'edit_note' note.pk %}" class="text-purple-400 hover:underline mt-2 inline-block">Edit</a>
+                        <a href="{% url 'delete_note' note.pk %}" class="text-red-400 hover:underline mt-2 inline-block">Delete</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-gray-500">You don't have any notes yet. <a href="{% url 'upload_note' %}" class="text-purple-300 hover:underline">Add one now!</a></p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects | NoirCore{% endblock %}
+
+{% block content %}
+<div class="text-center py-20">
+    <h1 class="text-4xl text-purple-300 font-bold">📁 My Projects</h1>
+    <p class="mt-4 text-gray-400">Explore your uploaded research projects here.</p>
+
+    <div class="mt-10">
+        {% if projects %}
+            <ul class="space-y-6">
+                {% for project in projects %}
+                    <li class="bg-black bg-opacity-30 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl text-purple-200">{{ project.title }}</h3>
+                        <p class="text-gray-400">{{ project.description|truncatewords:20 }}</p>
+                        <a href="{{ project.file.url }}" class="text-purple-400 hover:underline mt-2 inline-block">Download</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-gray-500">You don't have any projects yet. <a href="{% url 'upload_project' %}" class="text-purple-300 hover:underline">Upload one now!</a></p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Upload Project | NoirCore{% endblock %}
+{% block content %}
+<div class="glass-card max-w-xl mx-auto mt-10" data-aos="fade-up">
+  <h2 class="text-2xl text-purple-300 mb-4">Upload Project</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="mt-4 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700">Upload</button>
+  </form>
+</div>
+{% endblock %}

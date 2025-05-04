@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Upload Note | NoirCore{% endblock %}
+
+{% block content %}
+<style>
+  input, textarea, select {
+    color: black !important;
+    background-color: white; /* Optional, for better contrast */
+  }
+</style>
+
+<div class="glass-card max-w-xl mx-auto mt-10" data-aos="fade-up">
+  <h2 class="text-2xl text-purple-300 mb-4">Create Note</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="mt-4 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700">Save</button>
+  </form>
+</div>
+{% endblock %}
